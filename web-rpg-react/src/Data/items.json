@@ -224,7 +224,7 @@
     {"ID":75, "Tier":6, "Name":"Ancient Furbo Skull", "Description": "The Furbo Ancestors wraths will consume us all.",
     "Type":5, "Price":360, "LD": 30, "LSP":20, "HD":66, "HSP":50, "Icon":"./Images/Relic",
     "Tags":[[32,true],[67,true],[69,true],[66,[0.1,0.30],3],[62,60,[0.6,"Ghastly Furbos rain!"]]]},
-    {"ID":76, "Tier":6, "Name":"Mothers Ring", "Description": "Makes Relics, Damage over Time, & Furbo Equipment more powerful.",
+    {"ID":76, "Tier":6, "Name":"Strange Ring", "Description": "Makes Relics, Damage over Time, & Furbo Equipment more powerful.",
     "Type":6, "Price":300, "LD": null, "LSP":null, "HD":null, "HSP":null, "Icon":"./Images/Ring",
     "Tags":[[35,true],[46,[1.4,1.4],[false,false,false,false,false,true]],[68,1.2],[52,1.2],[70,1.5]]},
     {"ID":77, "Tier":6, "Name":"Dragon Ring", "Description": "Grants more power and resistance to Dragons, as well as mkae Dragon Equipment more powerful",
