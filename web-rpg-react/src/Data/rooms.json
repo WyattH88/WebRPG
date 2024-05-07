@@ -43,7 +43,7 @@
     {"ID":41, "Location": [9,0], "Adjacency": [-1,-1,42,40], "image":"./images/room9", "Tags": [[4,6]], "otherImages":["./images/enemy"]},
     {"ID":42, "Location": [9,1], "Adjacency": [41,-1,44,-1], "image":"./images/room6", "Tags": [[4,9]], "otherImages":["./images/enemy"]},
     {"ID":43, "Location": [7,2], "Adjacency": [38,46,-1,-1], "image":"./images/room7", "Tags": [[1,39]], "otherImages":["./images/treasureChest"]},
-    {"ID":44, "Location": [9,2], "Adjacency": [42,-1,45,-1], "image":"./images/room6", "Tags": [[1,65]], "otherImages":["./images/miniBoss"]},
+    {"ID":44, "Location": [9,2], "Adjacency": [42,-1,45,-1], "image":"./images/room6", "Tags": [[1,65]], "otherImages":["./images/treasureChest"]},
     {"ID":45, "Location": [9,3], "Adjacency": [44,-1,-1,47], "image":"./images/room10", "Tags": [[4,16]], "otherImages":["./images/miniBoss"]},
     {"ID":46, "Location": [8,2], "Adjacency": [39,-1,47,43], "image":"./images/room4", "Tags": [[4,15]], "otherImages":["./images/miniBoss"]},
     {"ID":47, "Location": [8,3], "Adjacency": [46,45,-1,48], "image":"./images/room1", "Tags": null, "otherImages":null},

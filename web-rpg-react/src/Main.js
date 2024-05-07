@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Player from './player';
+import PlayerView from './playerView';
 import Header from './header';
 import Map from './map';
 
@@ -17,7 +18,7 @@ function Main(){
     return(
     <>
     <Header />
-    <Player isActive={gameState.player==true} />
+    <PlayerView isActive={gameState.player==true} />
     <Map isActive={gameState.map==true} />
     </>
     )
