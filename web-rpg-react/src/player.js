@@ -18,7 +18,7 @@ class player{
         this.maxSP = 100;
         this.playerSkills = [];
         this.inventory = [];
-        this.equipment=[0,0,0,0,0,0,0];
+        this.equipment=[null,null,null,null,null,null,null];
         this.keyItems =[];
         this.position = 0;
         this.currentHP = 100;
@@ -26,6 +26,7 @@ class player{
         this.money = 0;
         this.exp = 0;
         this.totalExpEarned = 0;
+        this.map = new this.map();
 
         //gives starting items
         this.inventory.add(new item(0));
@@ -54,6 +55,10 @@ class player{
         this.money = money;
         this.exp = exp;
         this.totalExpEarned = totalExpEarned;
+        this.map = new this.map();
+        for(let i=0;i<keyItems.length;i++){
+            this.map.gotKeyItem(keyItems[i].ID);
+        }
     }
 
     /**
@@ -68,6 +73,7 @@ class player{
         if(itemToAdd.checkItemforTag(36)){
             //case the item is key should be added to the key items array
             this.keyItems[itemID-80]= itemToAdd;
+            this.map.gotKeyItem(itemID);
             return [true,itemID-80];
         }else{
             //not a key item
@@ -130,6 +136,7 @@ class player{
             }else{
                 price = items.at(itemID).Price*1.2;
             }
+            //NEED TO ADD FUNCTIONALITY TO THE DECIDANT RING and the GOLD RING
         }else{
             throw "No room for item";
         }
@@ -184,7 +191,9 @@ class player{
         let tagsArr = [];
         for(let i=0; i<this.playerSkills;i++){
             if(this.playerSkills[i].Tags!=null){
-                tagsArr.add(this.playerSkills[i].Tags);
+                for(let j=0; j<this.playerSkills[i].Tags[0].length;j++){
+                    tagsArr.add(this.playerSkills[i].Tags[0][j]);
+                }               
             }
         }
         return tagsArr;
@@ -286,6 +295,21 @@ class player{
     }
 
     /**
+     * check for a skill and returns true if the program finds it then removes it from the skills
+     * @param {*} IdNumber 
+     * @returns 
+     */
+    skillRemove(IdNumber){
+        for(i=0; this.playerSkills.length; i++){
+            if(this.playerSkills[i].ID == IdNumber){
+                this.playerSkills.splice(i,1);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * adds hp up to max, if you hit the max it sets hp to the max
      * @param {*} amount 
      */
@@ -323,7 +347,10 @@ class player{
         this.currentSP=this.maxSP*amount;
     }
 
-
+    /**
+     * returns an object for generating an enemy at the level approximatly equal to the player power
+     * @returns 
+     */
     getPlayerLevel(){
         let baseLevel = this.getSkills().length;
         let intLevel = Math.round(baseLevel/2);

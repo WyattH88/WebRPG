@@ -30,5 +30,27 @@ class room{
     getTagsArr(){
         return this.Tags[0];
     }
+    
+    removeLock(keyID){
+        for(let i=0; i<this.Tags.length; i++){
+            if(this.Tags[i][0]==0){
+                if(this.Tags[i][3]==keyID){
+                    this.Tags.splice(i,1);
+                    for(let j=0;j<this.otherImages.length;j++){
+                        switch(this.Tags[i][1]){
+                            case 0 && this.otherImages[i]=="./images/topLock":
+                                this.otherImages.splice(j,1);
+                            case 1 && this.otherImages[i]=="./images/rightLock":
+                                this.otherImages.splice(j,1);
+                            case 2 && this.otherImages[i]=="./images/bottomLock":
+                                this.otherImages.splice(j,1);
+                            case 3 && this.otherImages[i]=="./images/leftLock":
+                                this.otherImages.splice(j,1);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }

@@ -68,7 +68,7 @@ class map{
                     //case enemy
                     if(destinationTags[i][1]==-1){
                         //generate random encounter app equal to player strength
-                        
+                        let enemy = enemies.at(this.randomEncounter(player))
 
                     }else{
                         let enemy = enemies.at(destinationTags[i][1]);
@@ -105,10 +105,109 @@ class map{
      */
     randomEncounter(player){
         let encouterArr = player.getPlayerLevel();
+        let normalEnemies = [];
+        let level = encouterArr[2];
+        
+        //construct and array of possilbe enemies as an array saved
+        // [ID, Level, rare boolean]
+        for(let i=0;i<enemies.length;i++){
+            let newEntry = [-1,0,false];
+            for(let j=0; j<enemies.at(i).Tags[0].length;j++){
+                if(enemies.at(i).Tags[0][j][0]==21){
+                    newEntry[0]=(enemies.at(i).ID);
+                    newEntry[1]=(enemies.at(i).Level);
+                }
+                if(enemies.at(i).Tags[0][j][0]==104){
+                    newEntry[2]=(true);
+                }
+            }
+            if(newEntry[0]==-1){
+                normalEnemies.add(newEntry);
+            }
+        }
+        
+        //get the state of the player as rare, weak, or true random
+        
+        if(player.checkForSkill(79)){
+            //case rare
+            player.skillRemove(79);
+            let returnID = 4;
+            for(let k=0;k<normalEnemies.length;k++){
+                if(normalEnemies[k][2] && (level-normalEnemies[k][1])<(level-normalEnemies[returnID][1])){
+                    returnID = k;
+                }
+            }
+            return returnID;
+        } else if(player.checkForSkill(80)){
+            //case weak
+            player.skillRemove(80);
+            encouterArr[0] = Math.round(encouterArr[0]/3);
+            encouterArr[1] = Math.round(encouterArr[1]/3);
+            encouterArr[2] = Math.round(encouterArr[2]/3);
+        } else if(player.checkForSkill(81)){
+            //case true random
+            player.skillRemove(81);
+            let returnID = Math.round(Math.random()*28);
+            return returnID;
+        }
+        //case normal
+        
+        //find closest enemy in level to the encouter arr levels change encounter arr into an arr of id nums
+        for(let i=0;i<encouterArr.length;i++){
+            let notDone = true;
+            let radius = 0;
+            while(notDone){
+                for(let j=0;j<normalEnemies.length;j++){
+                    if(encounterArr[i]-normalEnemies[j][1]<=radius){
+                        if(i==0 || normalEnemies[j][0]!=encouterArr[i-1]){
+                            //check not too many repeats
+                            encouterArr[i]=normalEnemies[j][0];
+                            notDone=false;
+                        }
+                    }
+                }
+                radius+=1;
+            }
+        }   
+
+        //roll for the 3 current options check that they are not rare
+        let randInt = Math.round(Math.random()*100);
+        if(0<=randInt<40){
+            if(!normalEnemies[encouterArr[2]][2]){
+                return encounterArr[2];
+            }
+        }else if(40<=randInt<75){
+            if(!normalEnemies[encouterArr[1]][2]){
+                return encounterArr[1];
+            }
+        }else if(75<=randInt<=100){
+            if(!normalEnemies[encouterArr[0]][2]){
+                return encounterArr[0];
+            }
+        }else{
+            return 1;
+        }        
     }
 
     gotKeyItem(itemID){
-
+        switch(itemID){
+            case 80:
+                //key 1 room 8 left
+                roomArr[8].removeLock(itemID);
+            case 81:
+                //key 2 room 8 right
+                roomArr[8].removeLock(itemID);
+            case 82:
+                //key 3 room 33 bottom
+                roomArr[33].removeLock(itemID);
+            case 83:
+                //key 4 room 8 top
+                roomArr[8].removeLock(itemID);
+            case 84:
+                //trial token
+                this.trialState = true
+            default:
+        }
     }
 
     //Out of date don't use
