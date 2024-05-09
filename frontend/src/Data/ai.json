@@ -1,0 +1,40 @@
+[
+    {"ID":0, "Name":"Slime", "Phase":[0.5,0.5], "Cycle":null, "Other":null, "AttackBlocks":
+    [[[0,0.5],[1,0.5]],[[2,0.5],[3,0.5]]]},
+    {"ID":1, "Name":"Clown", "Phase":null, "Cycle":3, "Other":null, "AttackBlocks":
+    [[[4,0.5],[5,0.5]],[[4,0.5],[5,0.5]],[[6,0.4],[7,0.3],[8,0.3]]]},
+    {"ID":2, "Name":"Sword", "Phase":[0.6,0.4], "Cycle":null, "Other":null, "AttackBlocks":
+    [[[9,0.8],[10,0.2]],[[11,1]]]},
+    {"ID":3, "Name":"Brute", "Phase":null, "Cycle":4, "Other":null, "AttackBlocks":
+    [[[12,1]],[[13,1]],[[11,1]],[[10,1]]]},
+    {"ID":4, "Name":"Mage", "Phase":[0.6,0.4], "Cycle":null, "Other":null, "AttackBlocks":
+    [[[14,0.6],[15,0.2],[17,0.2]],[[16,0.3],[18,0.7]]]},
+    {"ID":5, "Name":"Furbo", "Phase":[1], "Cycle":null, "Other":null, "AttackBlocks":
+    [[[5,0.2],[19,0.2],[20,0.2],[21,0.2],[22,0.2]]]},
+    {"ID":6, "Name":"Ghost", "Phase":[0.2,0.8], "Cycle":null, "Other":null, "AttackBlocks":
+    [[[[23,0.6],[5,0.4]]],[[23,0.4],[24,0.6],[25,0.2]]]},
+    {"ID":7, "Name":"King Slime", "Phase":[0.4,0.6], "Cycle":null, "Other":null, "AttackBlocks":
+    [[[0,0.5],[3,0.5]],[[24,0.4],[27,0.3],[28,0.3]]]},
+    {"ID":8, "Name":"Ghost Clown", "Phase":null, "Cycle":2, "Other":null, "AttackBlocks":
+    [[[23,0.5],[29,0.5]],[[29,0.4],[6,0.2],[7,0.2],[8,0.2]]]},
+    {"ID":9, "Name":"General Ghost", "Phase":[0.4,0.6], "Cycle":null, "Other":null, "AttackBlocks":
+    [[[30,0.4],[31,0.3],[9,0.3]],[[30,0.4],[27,0.3],[11,0.3]]]},
+    {"ID":10, "Name":"Minotaur", "Phase":null, "Cycle":3, "Other":null, "AttackBlocks":
+    [[[9,0.5],[10,0.5]],[[32,1]],[[33,1]]]},
+    {"ID":11, "Name":"Composer", "Phase":[1], "Cycle":null, "Other":null, "AttackBlocks":
+    [[[34,0.25],[35,0.25],[36,0.5]]]},
+    {"ID":12, "Name":"Gnome Presidnt", "Phase":[0.6,0.4], "Cycle":null, "Other":null, "AttackBlocks":
+    [[[37,0.4],[5,0.2],[27,0.4]],[[38,0.35],[31,0.35],[39,0.3]]]},
+    {"ID":13, "Name":"Royal Ghost", "Phase":null, "Cycle":4, "Other":null, "AttackBlocks":
+    [[[38,1]],[[27,0.5],[26,0.5]],[[40,1]],[[25,0.5],[24,0.5]]]},
+    {"ID":14, "Name":"Dragon", "Phase":[0.6,0.4], "Cycle":null, "Other":null, "AttackBlocks":
+    [[[14,0.3],[41,0.6],[31,0.1]],[[14,0.3],[42,0.2],[33,0.2],[43,0.2],[31,0.1]]]},
+    {"ID":15, "Name":"Morphling", "Phase":null, "Cycle":null, "Other":1, "AttackBlocks":
+    []},
+    {"ID":16, "Name":"Long Furbo", "Phase":null, "Cycle":6, "Other":null, "AttackBlocks":
+    [[[19,0.3],[20,0.6],[21,0.1]],[[22,0.3],[44,0.7]],[[19,0.3],[20,0.6],[21,0.1]],[[19,0.3],[20,0.6],[21,0.1]],[[22,0.3],[44,0.7]],[[45,1]]]},
+    {"ID":17, "Name":"Philospher", "Phase":null, "Cycle":3, "Other":null, "AttackBlocks":
+    [[[40,0.1],[38,0.1],[25,0.1],[46,0.7]],[[40,0.1],[38,0.1],[25,0.1],[47,0.7]],[[40,0.1],[38,0.1],[25,0.1],[48,0.7]]]},
+    {"ID":18, "Name":"DGF", "Phase":null, "Cycle":3, "Other":null, "AttackBlocks":
+    [[[19,0.2],[20,0.2],[21,0.2],[47,0.2],[49,0.2]],[[22,1]],[[49,1]]]}
+]
